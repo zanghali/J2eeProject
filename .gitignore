@@ -1,1 +1,6 @@
 #fichier gitignore
+.settings
+.project
+.DS_Store
+.classpath
+/build
