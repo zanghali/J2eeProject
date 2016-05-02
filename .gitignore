@@ -1,1 +1,7 @@
 #fichier gitignore
+.settings
+.project
+.DS_Store
+.classpath
+/build
+\ No newline at end of file
