@@ -45,6 +45,28 @@ public class RobotControlService {
 				{
 			return "UP Done";
 		}
+		@POST
+		@Produces(MediaType.TEXT_PLAIN)
+		@Path("DOWN")
+		public String goDown()
+				{
+			return "Down Done";
+		}
+		
+		@POST
+		@Produces(MediaType.TEXT_PLAIN)
+		@Path("RIGHT")
+		public String goRight()
+				{
+			return "Right Done";
+		}
+		@POST
+		@Produces(MediaType.TEXT_PLAIN)
+		@Path("LEFT")
+		public String goLeft()
+				{
+			return "Left Done";
+		}
 		
 		@GET
 		@Produces(MediaType.APPLICATION_JSON)
