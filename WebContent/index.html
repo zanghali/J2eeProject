@@ -3,61 +3,41 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Javascript - AJAX To J2E JAX-RS</title>
-      <link rel="stylesheet" href="lib/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="lib/bootstrap-3.3.5-dist/css/bootstrap.css">
 </head>
 <body>
-<p >
-<span id="mylastContent" class="label label-success"></span>
-</p>
-<button id="myButton" type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-star"> </span>Up</button>
-<button id="myButton2" type="button" class="btn btn-default btn-default"><span class="glyphicon glyphicon-cloud"> </span>Env</button>
+	<p>
+		<span id="mylastContent" class="label label-success"></span>
+	</p>
+	<button id="myButton" type="button" class="btn btn-default btn-lg">
+		<span class="glyphicon glyphicon-star"> </span>Up
+	</button>
+	<button id="myButton2" type="button"
+		class="btn btn-default btn-default">
+		<span class="glyphicon glyphicon-cloud"> </span>Env
+	</button>
 
 <div class="container">
-		<div class="jumbotron">
-			<div class="container">
-				<div class="col-md-8">
-					<h1>Vous commandez le robot</h1>
-					 <br> <br>
-				</div>
-				<div class="col-md-4">
-					<div class="row">
-						<div class="col-xs-4 col-xs-offset-4">
-							<button id="btn-up" type="button" class="btn btn-primary btn-lg">
-								<span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
-							</button>
-						</div>
-					</div>
-					<br> <br> <br>
-					<div class="row">
-						<div class="col-xs-4 ">
-							<button id="btn-left" type="button" class="btn btn-primary btn-lg">
-								<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-							</button>
-						</div>
-						<div class="col-xs-4 col-xs-offset-4">
-							<button id="btn-right" type="button" class="btn btn-primary btn-lg">
-								<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-							</button>
-						</div>
-					</div>
-					<br> <br> <br>
-					<div class="row">
-						<div class="col-xs-4 col-xs-offset-4">
-							<button id="btn-down" type="button" class="btn btn-primary btn-lg">
-								<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<button id="btn-start" type="button" class="btn btn-success btn-lg">
+	<br>
+		<span class="glyphicon glyphicon-play"> </span>
+		<br> 	<br>
+		<div>Start command launcher</div>
+	</button>
+	
+	<button id="btn-stop" type="button"
+		class="btn btn-danger btn-lg">
+		<br>
+		<span class="glyphicon glyphicon-stop"> </span>
+			<br>	<br>
+		<div>Stop command launcher</div>
+	</button>
+</div>	
 
-<div id="myContent">
+	<div id="myContent"></div>
 
-</div>
-
-<script src="lib/jquery-1.11.1.min.js"></script>
-<script src="js/ajax.js"></script>
+	<script src="lib/jquery-1.11.1.min.js"></script>
+	<script src="js/ajax.js"></script>
 </body>
 </html>

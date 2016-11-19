@@ -2,53 +2,200 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Commande</title>
+<title>Commands Page</title>
+	<link rel="icon" type="image/png" href="../img/command.png" />
 <link rel="stylesheet"
-	href="../lib/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+	href="../lib/bootstrap-3.3.5-dist/css/bootstrap.css">
+<link rel="stylesheet" href="../css/main.css">
+<link href="../lib/bootstrapSwitch/bootstrap-switch.min.css"
+	rel="stylesheet">
+<link href="../lib/Chartist/chartist.min.css" rel="stylesheet"
+	type="text/css" />
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../lib/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="../lib/bootstrapSwitch/bootstrap-switch.min.js"></script>
+<script src="../lib/Chartist/chartist.min.js"></script>
+<script src="../lib/Chartist/chartistjs.js"></script>
+
 </head>
 <body>
-	<!-- panel de commande -->
-	<div class="container">
-		<div class="jumbotron">
+	<div class="header">
+		<div class="navbar navbar-default">
 			<div class="container">
-				<div class="col-md-8">
-					<h1>Vous commandez le robot</h1>
-					 <br> <br>
+				<div class="navbar-header">
+					<a class="navbar-brand" href="">Commands Page</a>
 				</div>
-				<div class="col-md-4">
-					<div class="row">
-						<div class="col-xs-4 col-xs-offset-4">
-							<button id="btn-up" type="button" class="btn btn-primary btn-lg">
-								<span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
-							</button>
-						</div>
-					</div>
-					<br> <br> <br>
-					<div class="row">
-						<div class="col-xs-4 ">
-							<button id="btn-left" type="button" class="btn btn-primary btn-lg">
-								<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-							</button>
-						</div>
-						<div class="col-xs-4 col-xs-offset-4">
-							<button id="btn-right" type="button" class="btn btn-primary btn-lg">
-								<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-							</button>
-						</div>
-					</div>
-					<br> <br> <br>
-					<div class="row">
-						<div class="col-xs-4 col-xs-offset-4">
-							<button id="btn-down" type="button" class="btn btn-primary btn-lg">
-								<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-							</button>
-						</div>
-					</div>
+				<ul class="nav navbar-nav">
+					<li><a class="navbar-left" href="admin.jsf">Administration Page</a></li>
+				</ul>
+				<div class="navbar-right">
+					<a id="commande" type="button"><img src="../img/robot.png" /></a>
 				</div>
 			</div>
 		</div>
 	</div>
-<script src="../lib/jquery-1.11.1.min.js"></script>
-<script src="../js/ajax.js"></script>
+
+	<!-- HTML to write -->
+
+	<!-- -->
+	<div id=contenu style="display: none">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-7 col-md-7 col-md-offset-1  ">
+					<canvas id="canvas" width="660" height="660"
+						style="border: 1px solid black #000000;"></canvas>
+				</div>
+
+				<!-- panel de commande -->
+
+				<div class="col-xs-12 col-sm-5 col-md-4">
+						<div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="headingOne">
+								<h4 class="panel-title">
+									<a role="button" data-toggle="collapse" href="#collapseCom">
+										<span class="caret"></span> Commands
+									</a>
+								</h4>
+							</div>
+							<div id="collapseCom" class="panel-collapse collapse out">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-xs-4 col-xs-offset-4">
+											<button id="btn-up" type="button"
+												class="btn btn-primary btn-lg">
+												<span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+											</button>
+										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-xs-4 ">
+											<button id="btn-left" type="button"
+												class="btn btn-primary btn-lg">
+												<span class="glyphicon glyphicon-menu-left"
+													aria-hidden="true"></span>
+											</button>
+										</div>
+										<div class="col-xs-4 ">
+											<button id="btn-refresh" type="button"
+												class="btn btn-alert btn-lg">
+												<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+											</button>
+										</div>
+										<div class="col-xs-4">
+											<button id="btn-right" type="button"
+												class="btn btn-primary btn-lg">
+												<span class="glyphicon glyphicon-menu-right"
+													aria-hidden="true"></span>
+											</button>
+										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-xs-4 col-xs-offset-4">
+											<button id="btn-down" type="button"
+												class="btn btn-primary btn-lg">
+												<span class="glyphicon glyphicon-menu-down"
+													aria-hidden="true"></span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel-group">
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingOne">
+									<h4 class="panel-title">
+										<a role="button" data-toggle="collapse"
+											data-parent="#accordion" href="#collapseSettings"
+											aria-expanded="true" aria-controls="collapseSettings"> <span
+											class="caret"></span> <span id="Settings">Settings</span>
+										</a>
+									</h4>
+								</div>
+								<div id="collapseSettings" class="panel-collapse collapse in"
+									role="tabpanel" aria-labelledby="headingOne">
+
+									<ul class="list-group">
+										<li class="list-group-item"><label class="col-sm-8"
+											for="Robot">Afficher la position actuelle du robot</label>
+											<div class="col-xs-offset-8">
+												<input type="checkbox" id="Robot" name="Robot"
+													class="toggle" checked>
+											</div> <label class="col-sm-8" for="Path">Afficher le
+												parcour du robot</label>
+											<div class="col-xs-offset-8">
+												<input type="checkbox" id="Path" name="Path" class="toggle"
+													checked>
+											</div> <label class="col-sm-8" for="Obstacles">Afficher les
+												obstacles</label>
+										<div class="col-xs-offset-8">
+												<input type="checkbox" id="Obstacles" name="Obstacles"
+													class="toggle" checked>
+											</div></li>
+										<li class="list-group-item"><label class="col-sm-8"
+											for="AutoMapping">Auto Mapping</label>
+											<div class="col-xs-offset-8">
+												<input type="checkbox" id="AutoMapping" name="AutoMapping" class="toggle">
+											</div></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="panel-group">
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingOne">
+									<h4 class="panel-title">
+										<a role="button" data-toggle="collapse"
+											data-parent="#accordion" href="#collapseStats"
+											aria-expanded="true" aria-controls="collapseStats"> <span
+											class="caret"></span> <span id="stats">Stats</span>
+										</a>
+									</h4>
+								</div>
+								<div id="collapseStats" class="panel-collapse collapse in"
+									role="tabpanel" aria-labelledby="headingOne">
+
+									<ul class="list-group">
+										<li class="list-group-item">Distance
+											<div id="stat_distance"></div>
+										</li>
+										<li class="list-group-item">Obstacles
+											<div id="stat_obstacle"></div>
+										</li>
+										<li class="list-group-item">Environement<span
+											id="pourcentages_env" class="badge" data-toggle="tooltip"
+											data-html="true" data-placement="left"
+											title="Tooltip on bottom">?</span>
+											<div id="stat_env"></div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			<!-- 	-->
+		<!-- il faudrait metre cette librairie en local -->
+		<!-- petit script de mise en forme pour afficher le tooltip -->
+		<script>
+			$(document).ready(function() {
+				$('[data-toggle="tooltip"]').tooltip();
+			});
+			$("[class='toggle']").bootstrapSwitch();
+			$("[class='toggle']").on('switchChange.bootstrapSwitch',
+					function(event, state) {
+						MAJ();
+					});
+		</script>
+		<script src="../js/canvas.js"></script>
+		<script src="../js/ajax.js"></script>
+		<script src="../js/ajaxUser.js"></script>
+		<script src="../js/jquery.cookie.js"></script>
 </body>
 </html>

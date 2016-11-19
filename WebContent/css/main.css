@@ -17,6 +17,11 @@ body {
   padding-right: 15px;
 }
 
+canvas {
+	width: 90%;
+	height: auto;
+}
+
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -46,7 +51,7 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
-
+  padding:10px 10px 10px 10px;
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
@@ -54,15 +59,12 @@ body {
   font-size: 21px;
   padding: 14px 24px;
 }
-.panel{
-    background-color: rgb(98, 96, 96);
-    color: white;
-    padding: 1px 1px;
+.panel .btn {
+  font-size: 21px;
+  padding: 14px 24px;
 }
-.panel-body{
-  padding:1px 1px;
-  padding-left: 1px;
-}
+
+
 
 .current{
   background-color: rgb(158, 158, 158);
